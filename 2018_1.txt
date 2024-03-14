@@ -1,0 +1,9 @@
+Aluno: cupim 
+    Codigo: 22222 
+    cpf: 380352038-00 
+    Materias cursadas: 
+         Codigo: 2222
+            Nome: matematica 
+            Professor: robson
+             Creditos: 2
+

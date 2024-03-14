@@ -1,0 +1,9 @@
+Aluno: kaio 
+    Codigo: 22334 
+    cpf: 382028302 
+    Materias cursadas: 
+         Codigo: 4444
+            Nome: ingles 
+            Professor: isa
+             Creditos: 3
+

@@ -1,9 +1,22 @@
 Aluno: cupim 
     Codigo: 22222 
-    cpf: 380352038-00 
+    cpf: 280280280-00 
     Materias cursadas: 
-         Codigo: 2222
+         Codigo: 0
             Nome: matematica 
-            Professor: robson
+            Professor: robso
              Creditos: 2
+         Codigo: 202
+            Nome: fisica 
+            Professor: lucas
+             Creditos: 3
+
+Aluno: pedro 
+    Codigo: 22333 
+    cpf: 222222222-22 
+    Materias cursadas: 
+         Codigo: 3453
+            Nome: literatura 
+            Professor: igor
+             Creditos: 4
 

@@ -14,7 +14,7 @@ struct disciplina_aluno
     {
         char codigo[6];
         char nome[100];
-        int cpf;
+        char cpf[13];
         struct disciplina_aluno *disciplina;
     };
 
@@ -53,10 +53,6 @@ int main(){
         
     teste = fopen(titulo_txt,"w");
 
-    fclose(teste);
-
-
-
     for (int i = 0; i < numero_de_alunos; i++)
     {
 
@@ -72,7 +68,7 @@ int main(){
         printf("Digite o codigo do aluno: ");
         scanf("%s", aluno[i].codigo);
         printf("Digite o cpf do aluno (apenas numeros): ");
-        scanf("%d", &aluno[i].cpf);
+        scanf("%s", aluno[i].cpf);
         printf("Cadastro de disciplinas:\n");
 
         for (int j = 0; j < numero_de_disciplinas; j++)
@@ -86,10 +82,14 @@ int main(){
             printf("Digite a quantidade de creditos da disciplina %d: ", j+1);
             scanf("%d",&aluno[i].disciplina[j].creditos);
         }
-        printf("%s", aluno[0].disciplina[0].professor);
+        fprintf(teste,"Aluno: %s \n    Codigo: %s \n    cpf: %s \n    Materias cursadas: \n",aluno[i].nome,aluno[i].codigo,aluno[i].cpf);
+        for(int j=0;j<numero_de_disciplinas;j++){
+            fprintf(teste,"         Codigo: %d\n            Nome: %s \n            Professor: %s\n             Creditos: %d\n",aluno[i].disciplina[j].codigo,aluno[i].disciplina[j].nome,aluno[i].disciplina[j].professor,aluno[i].disciplina[j].creditos);
+        }
+        fprintf(teste,"\n");
     }
 
-
+    fclose(teste);
     
     printf("Gostaria de continuar? Y/y se sim e qualquer outra teclas se nao");
     while ((c = getchar()) != '\n' && c != EOF) { }

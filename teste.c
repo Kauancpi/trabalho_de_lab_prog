@@ -20,15 +20,17 @@ typedef struct disciplinas{
 
 int main(){
     char continuar='y';
-    FILE *txt;
+    FILE *teste;
     int ano;
     char titulo_txt[15];
-    char sano[4];
+    char sano[10];
     char speriodo[15];
     int periodo;
     while(continuar=='y' || continuar=='y'){
         
         scanf("%d %d",&ano,&periodo);
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF) { }
         
         
         sprintf(sano,"%d",ano);
@@ -40,9 +42,10 @@ int main(){
 
         printf("%s",titulo_txt);
         
-        txt = fopen(titulo_txt,"w");
-        fwrite(titulo_txt,1,sizeof(titulo_txt),txt);
-        
+        teste = fopen(titulo_txt,"w");
+
+        fclose(teste);
+    
         
         scanf("%c",&continuar);
 
@@ -50,4 +53,6 @@ int main(){
 
          
     }
+
+    return(0);
 }

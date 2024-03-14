@@ -84,7 +84,7 @@ int main(){
         }
         fprintf(teste,"Aluno: %s \n    Codigo: %s \n    cpf: %s \n    Materias cursadas: \n",aluno[i].nome,aluno[i].codigo,aluno[i].cpf);
         for(int j=0;j<numero_de_disciplinas;j++){
-            fprintf(teste,"         Codigo: %d\n            Nome: %s \n            Professor: %s\n             Creditos: %d\n",aluno[i].disciplina[j].codigo,aluno[i].disciplina[j].nome,aluno[i].disciplina[j].professor,aluno[i].disciplina[j].creditos);
+            fprintf(teste,"         Codigo: %d\n            Nome: %s \n            Professor: %s\n            Creditos: %d\n",aluno[i].disciplina[j].codigo,aluno[i].disciplina[j].nome,aluno[i].disciplina[j].professor,aluno[i].disciplina[j].creditos);
         }
         fprintf(teste,"\n");
     }

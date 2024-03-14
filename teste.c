@@ -2,20 +2,20 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct alunos{
-    int codigo;
-    char nome[50];
-    char cpf[11];
-    int *materias;
-} aluno;
-
-typedef struct disciplinas{
-    int codigo;
-    char nome[50];
-    char professor[50];
-    int creditos;
-
-}  disciplina;
+struct disciplina_aluno
+    {
+        char nome[100];
+        int codigo;
+        char professor[100];
+        int creditos;
+    };
+    struct ficha_aluno
+    {
+        char codigo[6];
+        char nome[100];
+        int cpf;
+        struct disciplina_aluno *disciplina;
+    };
 
 
 int main(){

@@ -38,16 +38,16 @@ int main(){
 
         printf("Cadastro do aluno %d:\nQuantas disciplinas deseja cadastrar? ",i+1);
         scanf("%d", &numero_de_disciplinas);
-        aluno[i].disciplina = (struct disciplina_aluno*)malloc(numero_de_disciplinas*208);
+        aluno[i].disciplina = (struct disciplina_aluno*)malloc(numero_de_disciplinas*sizeof(struct disciplina_aluno));
         printf("%d\n", sizeof(aluno[i].disciplina));
         if (aluno[i].disciplina == NULL)
         {
             printf("Deu ruim");
         }
         printf("Digite o nome do aluno: ");
-        scanf("%.s", &aluno[i].nome);
+        scanf("%s", aluno[i].nome);
         printf("Digite o codigo do aluno: ");
-        scanf("%.s", &aluno[i].codigo);
+        scanf("%s", aluno[i].codigo);
         printf("Digite o cpf do aluno (apenas numeros): ");
         scanf("%d", &aluno[i].cpf);
         printf("Cadastro de disciplinas:\n");
@@ -57,12 +57,12 @@ int main(){
             printf("Digite o codigo da disciplina %d: ", j+1);
             scanf("%d",&aluno[i].disciplina[j].codigo);
             printf("Digite o nome da disciplina %d: ", j+1);
-            scanf("%.s",&aluno[i].disciplina[j].nome);
+            scanf("%s",aluno[i].disciplina[j].nome);
             printf("Digite o professor da disciplina %d: ", j+1);
-            scanf("%.s",&aluno[i].disciplina[j].professor);
+            scanf("%s",aluno[i].disciplina[j].professor);
             printf("Digite a quantidade de creditos da disciplina %d: ", j+1);
             scanf("%d",&aluno[i].disciplina[j].creditos);
         }
-        printf("%s",aluno[0].disciplina[0].nome);
+        printf("%s", aluno[0].disciplina[0].professor);
     }
 }

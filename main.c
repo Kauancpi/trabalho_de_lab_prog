@@ -14,7 +14,7 @@ struct disciplina_aluno
     {
         char codigo[6];
         char nome[100];
-        int cpf;
+        char cpf[13];
         struct disciplina_aluno *disciplina;
     };
 
@@ -39,18 +39,17 @@ int main(){
         printf("Cadastro do aluno %d:\nQuantas disciplinas deseja cadastrar? ",i+1);
         scanf("%d", &numero_de_disciplinas);
         aluno[i].disciplina = (struct disciplina_aluno*)malloc(numero_de_disciplinas*sizeof(struct disciplina_aluno));
-        printf("%d\n", sizeof(aluno[i].disciplina));
         if (aluno[i].disciplina == NULL)
         {
-            printf("Deu ruim");
+            printf("Erro na alocacao de memoria");
         }
         printf("Digite o nome do aluno: ");
         scanf("%s", aluno[i].nome);
         printf("Digite o codigo do aluno: ");
         scanf("%s", aluno[i].codigo);
-        printf("Digite o cpf do aluno (apenas numeros): ");
-        scanf("%d", &aluno[i].cpf);
-        printf("Cadastro de disciplinas:\n");
+        printf("Digite o cpf do aluno: (xxxxxxxx-xx) ");
+        scanf("%s", aluno[i].cpf);
+        printf("Cadastro de disciplinas\n");
 
         for (int j = 0; j < numero_de_disciplinas; j++)
         {
@@ -63,6 +62,5 @@ int main(){
             printf("Digite a quantidade de creditos da disciplina %d: ", j+1);
             scanf("%d",&aluno[i].disciplina[j].creditos);
         }
-        printf("%s", aluno[0].disciplina[0].professor);
     }
 }
